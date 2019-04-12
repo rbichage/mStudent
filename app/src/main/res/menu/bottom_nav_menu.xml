@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:iconTint="@color/md_black_1000"
+        android:icon="@drawable/ic_home_black_24dp"
+        />
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="Search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:iconTint="@color/md_black_1000"
+
+        />
+
+    <item
+        android:id="@+id/nav_students"
+        android:title="My Students"
+        android:icon="@drawable/ic_school_black"
+        />
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings_white"
+        android:iconTint="@color/md_black_1000"
+        />
+
+</menu>

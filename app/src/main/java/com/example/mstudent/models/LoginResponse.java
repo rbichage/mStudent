@@ -3,56 +3,94 @@ package com.example.mstudent.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class LoginResponse {
-    @SerializedName("fullName")
+    @SerializedName("user")
     @Expose
-    private String fullName;
-    @SerializedName("email")
+    private User user;
+    @SerializedName("student")
     @Expose
-    private String email;
-    @SerializedName("school")
+    private Student student;
+    @SerializedName("payments")
     @Expose
-    private String school;
-    @SerializedName("token")
+    private List<Payment> payments;
+    @SerializedName("primary_exams")
     @Expose
-    private String token;
+    private List<PrimaryExam> primaryExams;
+    @SerializedName("secondary_exams")
+    @Expose
+    private List<SecondaryExam> secondaryExams;
+    @SerializedName("university_exams")
+    @Expose
+    private List<UniversityExam> universityExams;
+    @SerializedName("certificates")
+    @Expose
+    private List<Certificate> certificates;
 
-    public LoginResponse(String fullName, String email, String school, String token) {
-        this.fullName = fullName;
-        this.email = email;
-        this.school = school;
-        this.token = token;
+    public LoginResponse(User user, Student student, List<Payment> payments, List<PrimaryExam> primaryExams, List<SecondaryExam> secondaryExams, List<UniversityExam> universityExams, List<Certificate> certificates) {
+        this.user = user;
+        this.student = student;
+        this.payments = payments;
+        this.primaryExams = primaryExams;
+        this.secondaryExams = secondaryExams;
+        this.universityExams = universityExams;
+        this.certificates = certificates;
     }
 
-    public String getFullName() {
-        return fullName;
+    public User getUser() {
+        return user;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public String getEmail() {
-        return email;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public String getSchool() {
-        return school;
+    public List<Payment> getPayments() {
+        return payments;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 
-    public String getToken() {
-        return token;
+    public List<PrimaryExam> getPrimaryExams() {
+        return primaryExams;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setPrimaryExams(List<PrimaryExam> primaryExams) {
+        this.primaryExams = primaryExams;
+    }
+
+    public List<SecondaryExam> getSecondaryExams() {
+        return secondaryExams;
+    }
+
+    public void setSecondaryExams(List<SecondaryExam> secondaryExams) {
+        this.secondaryExams = secondaryExams;
+    }
+
+    public List<UniversityExam> getUniversityExams() {
+        return universityExams;
+    }
+
+    public void setUniversityExams(List<UniversityExam> universityExams) {
+        this.universityExams = universityExams;
+    }
+
+    public List<Certificate> getCertificates() {
+        return certificates;
+    }
+
+    public void setCertificates(List<Certificate> certificates) {
+        this.certificates = certificates;
     }
 }

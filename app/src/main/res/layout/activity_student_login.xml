@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StudentLogin">
+    tools:context=".activities.UserLogin"
+    android:background="@drawable/jumbotron"
+    >
 
     <ImageView
         android:id="@+id/imageView2"
@@ -15,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.120000005"
+        android:tint="@color/md_white_1000"
         app:srcCompat="@drawable/ic_school_black" />
 
     <TextView
@@ -23,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Student Login"
+        android:textColor="@color/md_white_1000"
         style="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -35,6 +39,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="@color/md_white_1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -43,6 +48,7 @@
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/md_white_1000"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,6 +59,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="@color/md_white_1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input">
@@ -61,6 +68,7 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/md_white_1000"
             android:hint="Password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -74,6 +82,7 @@
         android:elevation="8dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/md_white_1000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
@@ -83,8 +92,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Forgot Password?"
-        android:textColor="#000"
+        android:textColor="@color/md_white_1000"
         android:padding="4dp"
+        android:textColorHint="@color/md_white_1000"
         app:layout_constraintStart_toStartOf="@+id/password_layout"
         app:layout_constraintTop_toBottomOf="@+id/b_login"
         />

@@ -13,7 +13,10 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class NoAuthClient {
     private static Retrofit retrofit;
-    private static String BASE_URL = "http://52.71.181.211/api/";
+//    private static String BASE_URL = "http://10.0.2.2:8000/api";
+//    private static String BASE_URL = "http://192.168.43.65:8000/api/";
+    private static String BASE_URL = "http://192.168.43.19:8000/api/";
+
 
     private NoAuthClient(){
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
