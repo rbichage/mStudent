@@ -3,7 +3,7 @@ package com.example.mstudent.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-class SecondaryExam {
+public  class SecondaryExam {
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -55,10 +55,17 @@ class SecondaryExam {
     @SerializedName("school")
     @Expose
     private String school;
+    @SerializedName("average")
+    @Expose
+    private Double average;
+    @SerializedName("totalscore")
+    @Expose
+    private Integer totalscore;
 
-    public SecondaryExam(Integer id, Integer maths, Integer english, Integer kiswahili, Integer chem, Integer phy, Integer bio, Integer comp,
-                         Integer bst, Integer agr, Integer art, Integer cre, Integer music, String date,
-                         String klass, Integer student, String school) {
+    public SecondaryExam(Integer id, Integer maths, Integer english, Integer kiswahili, Integer chem,
+                         Integer phy, Integer bio, Integer comp, Integer bst, Integer agr, Integer art,
+                         Integer cre, Integer music, String date,
+                         String klass, Integer student, String school, Double average, Integer totalscore) {
         this.id = id;
         this.maths = maths;
         this.english = english;
@@ -76,6 +83,8 @@ class SecondaryExam {
         this.klass = klass;
         this.student = student;
         this.school = school;
+        this.average = average;
+        this.totalscore = totalscore;
     }
 
     public Integer getId() {
@@ -212,5 +221,21 @@ class SecondaryExam {
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public Double getAverage() {
+        return average;
+    }
+
+    public void setAverage(Double average) {
+        this.average = average;
+    }
+
+    public Integer getTotalscore() {
+        return totalscore;
+    }
+
+    public void setTotalscore(Integer totalscore) {
+        this.totalscore = totalscore;
     }
 }

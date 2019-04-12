@@ -6,47 +6,60 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstudent.R;
-import com.example.mstudent.models.SecondaryExam;
+import com.example.mstudent.models.PrimaryExam;
 
 import java.util.List;
 
-public class SecondaryExamsAdapter extends RecyclerView.Adapter<SecondaryExamsAdapter.ViewHolder> {
-    private Context context;
-    private List<SecondaryExam> secondaryExamList;
+public class PrimaryExamsAdapter extends RecyclerView.Adapter<PrimaryExamsAdapter.ViewHolder> {
 
-    public SecondaryExamsAdapter(Context context, List<SecondaryExam> secondaryExamList) {
+    private Context context;
+    private List<PrimaryExam> primaryExamList;
+
+    public PrimaryExamsAdapter(Context context, List<PrimaryExam> primaryExamList) {
         this.context = context;
-        this.secondaryExamList = secondaryExamList;
+        this.primaryExamList = primaryExamList;
     }
 
+    public void setPrimaryExamList(List<PrimaryExam> primaryExamList) {
+        this.primaryExamList = primaryExamList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.primary_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.primary_item, parent, false);
+
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        SecondaryExam secondaryExam = secondaryExamList.get(position);
+        PrimaryExam primaryExam = primaryExamList.get(position);
 
-        holder.tvSchool.setText(secondaryExam.getSchool());
-        Log.e("Score", "onBindViewHolder: " + secondaryExam.getTotalscore() );
-        holder.tvScoreValue.setText(String.valueOf(secondaryExam.getTotalscore()));
-        holder.tvKlass.setText(String.format("Level: %s", secondaryExam.getKlass()));
+        holder.tvSchool.setText(primaryExam.getSchool());
+        holder.tvScoreValue.setText(String.valueOf(primaryExam.getTotalscore()));
+        holder.tvKlass.setText("level: " + primaryExam.getKlass());
+
     }
 
     @Override
     public int getItemCount() {
-        return secondaryExamList.size();
+        if (primaryExamList != null) {
+            Log.e("TOTAL ITEMS", "getItemCount: " + primaryExamList.size() );
+            return primaryExamList.size();
+        }
+
+        else
+            return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -61,11 +74,15 @@ public class SecondaryExamsAdapter extends RecyclerView.Adapter<SecondaryExamsAd
             tvScore = itemView.findViewById(R.id.tv_score);
             tvScoreValue = itemView.findViewById(R.id.tv_score_value);
             tvKlass = itemView.findViewById(R.id.student_klass);
+
+
         }
 
         @Override
         public void onClick(View v) {
+            PrimaryExam primaryExam = primaryExamList.get(getAdapterPosition());
 
+            Toast.makeText(context, primaryExam.getDate() + " : " + primaryExam.getKlass(), Toast.LENGTH_SHORT).show();
 
 
         }

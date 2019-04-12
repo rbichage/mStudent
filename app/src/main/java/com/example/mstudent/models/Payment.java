@@ -21,9 +21,9 @@ public class Payment {
     private Integer student;
     @SerializedName("school")
     @Expose
-    private Integer school;
+    private String school;
 
-    public Payment(Integer id, String date, String amount, String receiptNo, Integer student, Integer school) {
+    public Payment(Integer id, String date, String amount, String receiptNo, Integer student, String school) {
         this.id = id;
         this.date = date;
         this.amount = amount;
@@ -72,11 +72,11 @@ public class Payment {
         this.student = student;
     }
 
-    public Integer getSchool() {
+    public String getSchool() {
         return school;
     }
 
-    public void setSchool(Integer school) {
+    public void setSchool(String school) {
         this.school = school;
     }
 }

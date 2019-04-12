@@ -1,6 +1,6 @@
 package com.example.mstudent.api;
 
-import com.example.mstudent.models.CreateStaff;
+import com.example.mstudent.models.LipaNaMpesa;
 import com.example.mstudent.models.Login;
 import com.example.mstudent.models.LoginResponse;
 import com.example.mstudent.models.StudentDetails;
@@ -21,5 +21,10 @@ public interface ApiClient {
 
 @GET("/api/student/{id}")
     Call<StudentDetails> studentDetails(@Path("id") int id);
+
+@POST("core/transactions/MB/")
+    Call<ResponseBody> lipaNaMpesa(@Body LipaNaMpesa lipaNaMpesa);
+
+
 
 }
